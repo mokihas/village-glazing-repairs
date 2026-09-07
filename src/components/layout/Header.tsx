@@ -18,43 +18,39 @@ export function Header() {
   ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-20 items-center justify-between">
+    <header className="absolute top-6 left-0 w-full z-50 px-6 md:px-12">
+      <div className="container flex h-16 max-w-[1200px] items-center justify-between rounded-full bg-foreground px-6 shadow-xl">
         <Link href="/" className="flex items-center space-x-2">
-          {/* Placeholder for Logo, fallback to text */}
-          <span className="text-2xl font-bold tracking-tight text-primary">
-            {siteConfig.businessName !== "[BUSINESS NAME]" ? siteConfig.businessName : "GlazeCorp"}
+          {/* Logo */}
+          <span className="text-xl font-bold tracking-tight text-white flex items-center">
+            <span className="text-primary mr-1">V</span>
+            Village Glazing
           </span>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center space-x-10 text-[11px] font-bold uppercase tracking-[0.2em] text-foreground">
+        <nav className="hidden md:flex items-center space-x-8 text-sm font-medium text-white/90">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="transition-colors hover:text-secondary relative group"
+              className="transition-colors hover:text-primary relative group"
             >
               {link.name}
-              <span className="absolute -bottom-2 left-0 w-full h-[1px] bg-secondary transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"></span>
             </Link>
           ))}
         </nav>
 
         {/* Desktop CTA */}
-        <div className="hidden md:flex items-center space-x-8">
-          <Link href={`tel:${siteConfig.phone}`} className="flex items-center text-[11px] font-bold uppercase tracking-[0.1em] hover:text-secondary transition-colors text-foreground">
-            <Phone className="mr-2 h-4 w-4 text-muted-foreground" />
-            {siteConfig.phone}
-          </Link>
-          <Button asChild size="sm" className="h-10 px-6 text-[10px]">
-            <Link href="/request-a-quote">GET A QUOTE</Link>
+        <div className="hidden md:flex items-center">
+          <Button asChild size="sm" className="h-10 px-6 rounded-full text-foreground bg-primary hover:brightness-105">
+            <Link href="/request-a-quote">Free Quote</Link>
           </Button>
         </div>
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden p-2 text-foreground"
+          className="md:hidden p-2 text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle mobile menu"
         >
