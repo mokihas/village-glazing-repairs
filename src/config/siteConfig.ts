@@ -1,7 +1,7 @@
 export const siteConfig = {
   businessName: "Village Glazing Repairs",
   legalBusinessName: "Village Glazing Repairs",
-  tagline: "Save hundreds repairing the windows you have instead of replacing",
+  tagline: "Expert Window & Door Repairs",
   primaryCategory: "Glass & Glazing Contractor",
   secondaryCategories: ["Window Installation Service", "Glass Repair Service"],
   phone: "07708 132985",
@@ -99,7 +99,7 @@ export const siteConfig = {
       service: "Double Glazing Repairs"
     }
   ],
-  projects: [],
+  projects: [] as Array<{id: string, title: string, type: string, location: string, service: string, description: string, image: string}>,
   faqs: [
     {
       question: "Do I need to replace the whole window if it's misted?",
